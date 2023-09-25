@@ -1,6 +1,6 @@
 package costaBank;
 
-public class TesteCriar {
+public class TesteInstanciar {
 
 	public static void main(String[] args) {
 		String nome = "José Manoel";
