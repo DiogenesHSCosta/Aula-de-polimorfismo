@@ -2,22 +2,27 @@ package costaBank;
 
 public class Cliente implements Autenticavel {
 
-private String senha;
+	private String nome;
+	private AutenticadorInstancia autentica = new AutenticadorInstancia();
 	
+	public Cliente (String nome) {
+		this.nome = nome;
+	}
 	
 	@Override
 	public void setSenha(String senha) {
-		this.senha = senha;
+		autentica.setSenha(senha);
 	}
 	
 	@Override
 	public boolean getAutenticacao(String senha) {
-		
-		if(this.senha == senha) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return autentica.getAutenticacao(senha);
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 }

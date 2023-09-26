@@ -3,6 +3,7 @@ package costaBank;
 public class Gerente extends Funcionario implements Autenticavel {
 	
 	private String senha;
+	private AutenticadorInstancia autentica = new AutenticadorInstancia();
 	
 	public Gerente(String nome, String cpf, double salario) {
 		super(nome, cpf, salario);
@@ -13,20 +14,14 @@ public class Gerente extends Funcionario implements Autenticavel {
 		return super.getBonificacao()+super.getSalario();
 	}
 
-	
 	@Override
 	public void setSenha(String senha) {
-		this.senha = senha;
+		autentica.setSenha(senha);
 	}
 	
 	@Override
 	public boolean getAutenticacao(String senha) {
-		
-		if(this.senha == senha) {
-			return true;
-		}
-		else {
-			return false;
-		}
+		return autentica.getAutenticacao(senha);
 	}
+	
 }
