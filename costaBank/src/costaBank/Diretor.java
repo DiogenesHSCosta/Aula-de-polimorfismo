@@ -1,6 +1,6 @@
 package costaBank;
 
-public class Diretor extends Funcionario {
+public class Diretor extends FuncionarioAutenticavel {
 	
 	
 	public Diretor(String nome, String cpf, double salario) {
