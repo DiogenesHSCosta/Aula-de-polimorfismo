@@ -3,6 +3,10 @@ package costaBank;
 public class Gerente extends Funcionario {
 	private String senha;
 	
+	public Gerente(String nome, String cpf, double salario) {
+		super(nome, cpf, salario);
+	}
+	
 	public boolean getAutenticacao(String senha) {
 		
 		if(this.senha == senha) {
