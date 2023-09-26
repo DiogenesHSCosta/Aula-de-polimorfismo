@@ -1,20 +1,16 @@
 package costaBank;
 
-public abstract class FuncionarioAutenticavel extends Funcionario {
-	
-	private String senha;
-	
-	public FuncionarioAutenticavel(String nome, String cpf, double salario) {
-		super(nome, cpf, salario);
-	}
+public class Cliente implements Autenticavel {
+
+private String senha;
 	
 	
-	
+	@Override
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
 	
-	
+	@Override
 	public boolean getAutenticacao(String senha) {
 		
 		if(this.senha == senha) {
@@ -24,6 +20,4 @@ public abstract class FuncionarioAutenticavel extends Funcionario {
 			return false;
 		}
 	}
-
-	
 }
